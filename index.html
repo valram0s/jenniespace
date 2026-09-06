@@ -1,0 +1,140 @@
+
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>JENNIE — Artist Archive ♡</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+<style>
+:root{--red:#e72d58;--darkred:#b8173d;--pink:#ff8fae;--soft:#ffe5ed;--cream:#fffaf7;--ink:#24171c;--muted:#80656d;--line:#f0c5d1;--shadow:0 20px 60px rgba(110,20,45,.12)}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{background:radial-gradient(circle at 5% 0%,#ff8fae38,transparent 25%),radial-gradient(circle at 95% 18%,#e72d581c,transparent 25%),var(--cream);color:var(--ink);font-family:"DM Sans",sans-serif}body:before{content:"";position:fixed;inset:0;z-index:-1;opacity:.25;background-image:radial-gradient(#e72d5826 .7px,transparent .7px);background-size:9px 9px;pointer-events:none}a{color:inherit;text-decoration:none}.wrap{width:min(1160px,calc(100% - 30px));margin:auto}.eyebrow{font-size:10px;letter-spacing:.18em;text-transform:uppercase;font-weight:700;color:var(--red)}.title{font:500 clamp(42px,6vw,76px)/.95 "Playfair Display",serif;letter-spacing:-.04em}.title em{color:var(--red)}.card{background:#ffffffd9;border:1px solid var(--line);border-radius:30px;box-shadow:var(--shadow)}
+nav{position:sticky;top:14px;z-index:20;width:min(1160px,calc(100% - 24px));margin:14px auto 0;padding:11px 14px 11px 20px;border:1px solid var(--line);border-radius:999px;background:#fffffff0;backdrop-filter:blur(18px);display:flex;align-items:center;justify-content:space-between}.brand{font:italic 22px "Playfair Display",serif;color:var(--red)}.links{display:flex;gap:3px}.links a{font-size:11px;color:var(--muted);padding:9px 11px;border-radius:99px}.links a:hover{background:var(--soft);color:var(--red)}
+.bow{width:38px;height:27px;position:relative}.bow:before,.bow:after{content:"";position:absolute;width:27px;height:25px;top:1px;background:var(--red);border-radius:65% 35% 60% 40%}.bow:before{left:0;transform:rotate(22deg)}.bow:after{right:0;transform:scaleX(-1) rotate(22deg)}.bow span{position:absolute;z-index:2;width:11px;height:11px;left:14px;top:8px;border-radius:50%;background:var(--darkred)}
+section{padding:92px 0;scroll-margin-top:75px}.news{padding-top:65px}.hero{display:grid;grid-template-columns:1.4fr .6fr;min-height:470px;border-radius:38px;overflow:hidden;background:var(--red);color:#fff;box-shadow:0 28px 80px #b7173d33}.hero-copy{padding:clamp(35px,6vw,70px);display:flex;flex-direction:column;justify-content:center}.breaking{width:max-content;padding:8px 12px;border:1px solid #ffffff66;border-radius:99px;font-size:9px;letter-spacing:.15em;text-transform:uppercase}.hero h1{font:500 clamp(60px,9vw,112px)/.82 "Playfair Display",serif;letter-spacing:-.06em;margin-top:22px}.hero h1 span{display:block;margin-left:40px;font-style:italic}.hero p{max-width:600px;margin-top:27px;line-height:1.75;font-size:14px;color:#fffdeF}.meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}.meta span{font-size:10px;padding:8px 11px;border:1px solid #ffffff44;background:#ffffff14;border-radius:99px}.btn{display:inline-block;margin-top:25px;width:max-content;padding:12px 16px;border-radius:99px;background:#fff;color:var(--darkred);font-size:10px;font-weight:700}.art{position:relative;overflow:hidden;background:radial-gradient(circle at 55% 35%,#ffffff50,transparent 5%),linear-gradient(145deg,#ff9db8,#c91445)}.art:before{content:"J";position:absolute;right:-20px;bottom:-110px;font:italic 330px "Playfair Display",serif;color:#ffffff24}.halo{position:absolute;width:245px;height:245px;border:1px solid #ffffff99;border-radius:50%;top:95px;left:50%;transform:translateX(-50%);box-shadow:0 0 0 30px #ffffff09,0 0 0 60px #ffffff06}.art .bow{position:absolute;left:50%;top:220px;transform:translate(-50%,-50%) scale(2);filter:brightness(0) invert(1)} 
+.profile{display:grid;grid-template-columns:.7fr 1.3fr;gap:22px}.profile-card{padding:38px}.profile-card p,.story p{color:var(--muted);line-height:1.85;font-size:14px;margin-top:20px}.facts{margin-top:24px}.fact{display:flex;justify-content:space-between;border-bottom:1px dashed var(--line);padding:11px 0;font-size:12px;gap:15px}.fact span:first-child{color:var(--muted)}.fact span:last-child{font-weight:700;text-align:right}.story{padding:45px;background:var(--soft);position:relative;overflow:hidden}.story h3{font:500 40px/1.05 "Playfair Display",serif;max-width:720px}.story:after{content:"♡";position:absolute;right:-35px;bottom:-110px;font:300px serif;color:#e72d5812}
+.head{display:flex;justify-content:space-between;align-items:end;gap:25px;margin-bottom:30px}.head p{max-width:410px;color:var(--muted);font-size:13px;line-height:1.7}.releases{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}.release{background:#fff;border:1px solid var(--line);border-radius:26px;overflow:hidden;transition:.25s}.release:hover{transform:translateY(-6px);box-shadow:var(--shadow)}.cover{height:285px;display:grid;place-items:center;color:#fff;position:relative}.cover:after{content:"♡";position:absolute;right:18px;top:12px;font-size:25px}.cover.ruby{background:linear-gradient(145deg,#ef9eb7,#8e1837)}.cover.fallen{background:radial-gradient(circle at 50% 30%,#fff4 0 2%,transparent 3%),linear-gradient(145deg,#66636d,#111115)}.cover.solo{background:linear-gradient(145deg,#ffb0c6,#df2757)}.cover strong{font:italic 500 43px "Playfair Display",serif}.cover small{display:block;text-align:center;font-size:9px;letter-spacing:.2em;margin-bottom:10px}.release-body{padding:22px}.release-body small{color:var(--red);font-size:9px;text-transform:uppercase;letter-spacing:.14em;font-weight:700}.release-body h3{font:500 28px "Playfair Display",serif;margin-top:7px}.release-body p{color:var(--muted);font-size:12px;line-height:1.6;margin-top:8px}.release-body a{display:inline-block;color:var(--darkred);font-size:10px;font-weight:700;margin-top:14px}
+.fallen{display:grid;grid-template-columns:.9fr 1.1fr;background:#181619;color:#fff;border-radius:38px;overflow:hidden;box-shadow:0 30px 90px #0002}.fallen-art{min-height:580px;background:radial-gradient(circle at 50% 18%,#fff3,transparent 10%),radial-gradient(circle at 50% 85%,#ff477533,transparent 28%),linear-gradient(160deg,#4a474e,#111114);display:grid;place-items:center}.fallen-art .halo{position:relative;top:auto;left:auto;transform:none}.fallen-copy{padding:62px;display:flex;flex-direction:column;justify-content:center}.fallen-copy .eyebrow{color:#ff9db8}.fallen-copy h2{font:500 clamp(58px,7vw,92px)/.82 "Playfair Display",serif;margin-top:16px}.fallen-copy h2 span{display:block;color:#ff9db8;font-style:italic;margin-left:40px}.fallen-copy>p{color:#c5b9bd;line-height:1.8;font-size:14px;max-width:590px;margin-top:28px}.tracks{margin-top:25px}.track{display:grid;grid-template-columns:35px 1fr auto;gap:10px;padding:10px 0;border-bottom:1px solid #fff1;font-size:12px}.track i{color:#ff9db8;font-style:normal}.track span:last-child{color:#91868b;font-size:10px}.darkbtn{display:inline-block;margin:24px 7px 0 0;padding:11px 15px;border-radius:99px;background:#fff;color:#21151a;font-size:10px;font-weight:700}.darkbtn.alt{background:transparent;color:#fff;border:1px solid #fff4}
+.timeline{position:relative;margin-top:38px}.timeline:before{content:"";position:absolute;left:20px;top:0;bottom:0;width:1px;background:var(--line)}.event{position:relative;padding:0 0 43px 60px}.dot{position:absolute;left:13px;top:2px;width:15px;height:15px;background:var(--red);border:4px solid var(--soft);border-radius:50%}.year{color:var(--red);font-size:11px;letter-spacing:.14em;font-weight:700}.event h3{font:500 30px "Playfair Display",serif;margin-top:6px}.event p{max-width:760px;color:var(--muted);font-size:13px;line-height:1.75;margin-top:7px}
+.categories{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:30px}.category{padding:27px;min-height:190px;background:#fff;border:1px solid var(--line);border-radius:25px;transition:.2s}.category:hover{background:var(--soft);transform:translateY(-4px)}.category .icon{color:var(--red);font-size:25px;margin-bottom:25px}.category h3{font:500 24px "Playfair Display",serif}.category p{color:var(--muted);font-size:11px;line-height:1.6;margin-top:7px}.official{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:28px}.official a{padding:20px;border-radius:20px;background:var(--soft);border:1px solid var(--line);font-size:12px;font-weight:700;color:var(--darkred);transition:.2s}.official a:hover{background:var(--red);color:#fff;transform:translateY(-3px)}
+footer{margin-top:35px;padding:80px 20px 35px;background:var(--red);color:#fff;text-align:center}footer h2{font:italic 500 clamp(43px,7vw,75px) "Playfair Display",serif}footer p{font-size:12px;opacity:.8;margin-top:8px}.footer-bow{margin:0 auto 25px;filter:brightness(0) invert(1)}.line{height:1px;width:min(500px,90%);background:#fff4;margin:38px auto 18px}.copy{font-size:9px;letter-spacing:.12em;opacity:.6}
+@media(max-width:850px){.links{display:none}.hero,.profile,.fallen{grid-template-columns:1fr}.art{min-height:260px}.releases{grid-template-columns:1fr 1fr}.categories,.official{grid-template-columns:1fr 1fr}.fallen-art{min-height:350px}}
+@media(max-width:560px){.wrap{width:calc(100% - 20px)}section{padding:70px 0}.news{padding-top:45px}.hero-copy,.fallen-copy,.profile-card,.story{padding:30px}.hero h1{font-size:65px}.hero h1 span{margin-left:20px}.releases,.categories,.official{grid-template-columns:1fr}.head{display:block}.head p{margin-top:14px}.fallen-copy h2{font-size:60px}}
+</style>
+</head>
+<body>
+<nav>
+<a class="brand" href="#home">JENNIE ♡</a>
+<div class="links"><a href="#news">news</a><a href="#profile">profile</a><a href="#music">music</a><a href="#fallen">fallen angel</a><a href="#timeline">timeline</a><a href="#more">more</a></div>
+<div class="bow"><span></span></div>
+</nav>
+
+<main class="wrap" id="home">
+
+<section class="news" id="news">
+<div class="hero">
+<div class="hero-copy">
+<div class="breaking">♡ official news · 28.08.2026</div>
+<h1>fallen <span>angel.</span></h1>
+<p>JENNIE abriu um novo capítulo de sua carreira solo com <strong>Fallen Angel</strong>. O Digital EP foi lançado mundialmente em 28 de agosto de 2026 e reúne três faixas: <strong>FALLEN ANGEL</strong>, <strong>HEAVEN</strong> e <strong>Less than a Lover</strong>.</p>
+<div class="meta"><span>NEW EP</span><span>3 TRACKS</span><span>2026</span><span>OA × COLUMBIA</span></div>
+<a class="btn" href="https://weverse.io/jennie/notice/38516" target="_blank">ler notícia oficial ↗</a>
+</div>
+<div class="art"><div class="halo"></div><div class="bow"><span></span></div></div>
+</div>
+</section>
+
+<section id="profile">
+<div class="profile">
+<div class="card profile-card">
+<div class="eyebrow">01 — artist profile</div>
+<h2 class="title">meet <em>Jennie.</em></h2>
+<p>JENNIE KIM é cantora, rapper, compositora e atriz sul-coreana. Nascida em 16 de janeiro de 1996, em Seongnam, ela estreou como integrante do BLACKPINK em 2016 e construiu também uma trajetória solo iniciada com “SOLO”, em 2018.</p>
+<div class="facts">
+<div class="fact"><span>nome</span><span>Jennie Kim</span></div>
+<div class="fact"><span>nome artístico</span><span>JENNIE</span></div>
+<div class="fact"><span>nascimento</span><span>16.01.1996</span></div>
+<div class="fact"><span>origem</span><span>Seongnam, Coreia do Sul</span></div>
+<div class="fact"><span>grupo</span><span>BLACKPINK</span></div>
+<div class="fact"><span>empresa solo</span><span>OA ENTERTAINMENT</span></div>
+</div>
+</div>
+<div class="card story">
+<div class="eyebrow">the artist</div>
+<h3>entre o palco, a moda e a música, JENNIE construiu uma identidade própria.</h3>
+<p>Além de sua atividade com o BLACKPINK, JENNIE desenvolveu uma carreira solo marcada por diferentes fases. “SOLO” abriu essa trajetória em 2018; “You & Me” veio em 2023; “Mantra” em 2024; e seu primeiro álbum de estúdio, “Ruby”, chegou em 7 de março de 2025. Em 2026, “Fallen Angel” acrescentou uma nova fase à discografia solo.</p>
+<p>Este arquivo foi pensado para crescer junto com a carreira: música, performances, videoclipes, moda, atuação, colaborações, BLACKPINK e notícias oficiais.</p>
+</div>
+</div>
+</section>
+
+<section id="music">
+<div class="head"><div><div class="eyebrow">02 — discography</div><h2 class="title">the <em>music.</em></h2></div><p>Da estreia solo com “SOLO” ao primeiro álbum “Ruby” e ao novo EP “Fallen Angel”, uma visão geral da evolução solo de JENNIE.</p></div>
+<div class="releases">
+<article class="release"><div class="cover solo"><div><small>2018 · SINGLE</small><strong>SOLO</strong></div></div><div class="release-body"><small>debut solo</small><h3>SOLO</h3><p>O primeiro grande capítulo solo de JENNIE, lançado em novembro de 2018.</p><a href="https://jennie.lnk.to/solo" target="_blank">ouvir ↗</a></div></article>
+<article class="release"><div class="cover ruby"><div><small>2025 · 1ST STUDIO ALBUM</small><strong>Ruby</strong></div></div><div class="release-body"><small>studio album</small><h3>Ruby</h3><p>Primeiro álbum de estúdio de JENNIE, lançado em 7 de março de 2025, com 15 faixas.</p><a href="https://jennie.lnk.to/ruby" target="_blank">explorar ↗</a></div></article>
+<article class="release"><div class="cover fallen"><div><small>2026 · DIGITAL EP</small><strong>Fallen Angel</strong></div></div><div class="release-body"><small>latest release</small><h3>Fallen Angel</h3><p>EP digital lançado em 28 de agosto de 2026, com três faixas.</p><a href="https://jennie.lnk.to/fallenangel" target="_blank">ouvir agora ↗</a></div></article>
+</div>
+</section>
+
+<section id="fallen">
+<div class="fallen">
+<div class="fallen-art"><div class="halo"></div></div>
+<div class="fallen-copy">
+<div class="eyebrow">03 — latest chapter</div>
+<h2>Fallen <span>Angel.</span></h2>
+<p>O novo Digital EP de JENNIE foi lançado mundialmente em 28 de agosto de 2026. O projeto apresenta três faixas e tem “FALLEN ANGEL” como faixa-título. A narrativa visual da faixa trabalha com a ideia de uma “fallen angel” e temas de solidão, perda e desejo de encontrar um lugar de acolhimento.</p>
+<div class="tracks">
+<div class="track"><i>01</i><strong>FALLEN ANGEL</strong><span>3:19</span></div>
+<div class="track"><i>02</i><strong>HEAVEN</strong><span>3:06</span></div>
+<div class="track"><i>03</i><strong>Less than a Lover</strong><span>2:25</span></div>
+</div>
+<a class="darkbtn" href="https://jennie.lnk.to/fallenangel" target="_blank">ouvir EP ↗</a>
+<a class="darkbtn alt" href="https://weverse.io/jennie/notice/38516" target="_blank">notícia oficial ↗</a>
+<a class="darkbtn alt" href="https://shop.jenn.ie/" target="_blank">official store ↗</a>
+</div>
+</div>
+</section>
+
+<section id="timeline">
+<div class="head"><div><div class="eyebrow">04 — career timeline</div><h2 class="title">the <em>journey.</em></h2></div><p>Alguns dos principais momentos da trajetória artística de JENNIE, do início com o BLACKPINK aos projetos solo recentes.</p></div>
+<div class="timeline">
+<div class="event"><div class="dot"></div><div class="year">2016</div><h3>BLACKPINK</h3><p>JENNIE estreia oficialmente como integrante do BLACKPINK em agosto de 2016.</p></div>
+<div class="event"><div class="dot"></div><div class="year">2018</div><h3>SOLO</h3><p>Em novembro, JENNIE inicia oficialmente sua discografia solo com o single “SOLO”.</p></div>
+<div class="event"><div class="dot"></div><div class="year">2023</div><h3>You & Me</h3><p>JENNIE lança “You & Me”, consolidando uma nova fase de sua identidade solo.</p></div>
+<div class="event"><div class="dot"></div><div class="year">2024</div><h3>Mantra</h3><p>“Mantra” marca outro capítulo da carreira solo e antecede o projeto que viria a se tornar seu primeiro álbum de estúdio.</p></div>
+<div class="event"><div class="dot"></div><div class="year">2025</div><h3>Ruby</h3><p>JENNIE lança seu primeiro álbum de estúdio, “Ruby”, em 7 de março de 2025. O projeto tem 15 faixas e inclui colaborações com Dua Lipa, Doechii e Childish Gambino.</p></div>
+<div class="event"><div class="dot"></div><div class="year">2026</div><h3>Fallen Angel</h3><p>O novo Digital EP chega em 28 de agosto de 2026, trazendo “FALLEN ANGEL”, “HEAVEN” e “Less than a Lover”.</p></div>
+</div>
+</section>
+
+<section id="more">
+<div class="head"><div><div class="eyebrow">05 — everything jennie</div><h2 class="title">beyond the <em>music.</em></h2></div><p>O espaço pode crescer para reunir todas as áreas da carreira de JENNIE.</p></div>
+<div class="categories">
+<article class="category"><div class="icon">♫</div><h3>music</h3><p>Discografia solo, singles, álbuns, EPs, colaborações, videoclipes e performances.</p></article>
+<article class="category"><div class="icon">✦</div><h3>blackpink</h3><p>A trajetória de JENNIE como integrante do BLACKPINK, incluindo álbuns, turnês e performances.</p></article>
+<article class="category"><div class="icon">♡</div><h3>fashion</h3><p>Moda, campanhas, editoriais, aparições e identidade visual.</p></article>
+<article class="category"><div class="icon">🎬</div><h3>acting</h3><p>Projetos de atuação e trabalhos audiovisuais, incluindo Jennie Ruby Jane.</p></article>
+</div>
+</section>
+
+<section>
+<div class="eyebrow">06 — official archive</div><h2 class="title">follow <em>jennie.</em></h2>
+<div class="official">
+<a href="https://www.jenn.ie/" target="_blank">official website ↗</a>
+<a href="https://www.instagram.com/jennierubyjane/" target="_blank">instagram ↗</a>
+<a href="https://open.spotify.com/artist/250b0Wlc5Vk0CoUsaCY84M" target="_blank">spotify ↗</a>
+<a href="https://weverse.io/jennie" target="_blank">weverse ↗</a>
+</div>
+</section>
+</main>
+
+<footer>
+<div class="bow footer-bow"><span></span></div>
+<h2>JENNIE, forever in bloom.</h2>
+<p>an unofficial fan-made artist archive ♡</p>
+<div class="line"></div><div class="copy">JENNIE ARCHIVE · FAN PROJECT · UPDATED FOR 2026</div>
+</footer>
+</body>
+</html>
