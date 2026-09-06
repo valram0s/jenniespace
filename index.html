@@ -1,4 +1,4 @@
-
+<!doctype html>
 <html lang="pt-BR">
 <head>
 <meta charset="utf-8">
@@ -21,9 +21,103 @@ section{padding:92px 0;scroll-margin-top:75px}.news{padding-top:65px}.hero{displ
 footer{margin-top:35px;padding:80px 20px 35px;background:var(--red);color:#fff;text-align:center}footer h2{font:italic 500 clamp(43px,7vw,75px) "Playfair Display",serif}footer p{font-size:12px;opacity:.8;margin-top:8px}.footer-bow{margin:0 auto 25px;filter:brightness(0) invert(1)}.line{height:1px;width:min(500px,90%);background:#fff4;margin:38px auto 18px}.copy{font-size:9px;letter-spacing:.12em;opacity:.6}
 @media(max-width:850px){.links{display:none}.hero,.profile,.fallen{grid-template-columns:1fr}.art{min-height:260px}.releases{grid-template-columns:1fr 1fr}.categories,.official{grid-template-columns:1fr 1fr}.fallen-art{min-height:350px}}
 @media(max-width:560px){.wrap{width:calc(100% - 20px)}section{padding:70px 0}.news{padding-top:45px}.hero-copy,.fallen-copy,.profile-card,.story{padding:30px}.hero h1{font-size:65px}.hero h1 span{margin-left:20px}.releases,.categories,.official{grid-template-columns:1fr}.head{display:block}.head p{margin-top:14px}.fallen-copy h2{font-size:60px}}
+
+/* ───── FALLEN ANGEL MUSIC EXPERIENCE ───── */
+.music-intro{
+  position:fixed; inset:0; z-index:9999;
+  display:grid; place-items:center;
+  padding:24px;
+  background:
+    radial-gradient(circle at 50% 30%, rgba(255,255,255,.98), rgba(255,242,246,.97) 42%, rgba(231,45,91,.97) 140%);
+  transition:opacity .65s ease, visibility .65s ease;
+}
+.music-intro.hidden{opacity:0;visibility:hidden;pointer-events:none}
+.intro-card{
+  width:min(520px,100%); text-align:center;
+  padding:54px 34px 46px;
+  border:1px solid rgba(231,45,91,.18);
+  border-radius:34px;
+  background:rgba(255,255,255,.78);
+  box-shadow:0 28px 80px rgba(126,18,48,.16);
+  backdrop-filter:blur(18px);
+}
+.intro-bow{font-size:42px;line-height:1;margin-bottom:20px;color:#e72d5b}
+.intro-mini{
+  font-size:10px;letter-spacing:.22em;text-transform:uppercase;
+  color:#a9576f;margin-bottom:18px;
+}
+.intro-card h1{
+  margin:0;color:#6f1834;
+  font-family:"Playfair Display",serif;
+  font-size:clamp(42px,8vw,76px);
+  line-height:.92;font-weight:500;
+}
+.intro-card h1 em{color:#e72d5b}
+.intro-card p{
+  margin:22px 0 24px;color:#8b5364;font-size:13px;letter-spacing:.03em;
+}
+#enterSpace{
+  appearance:none;border:0;cursor:pointer;
+  padding:13px 25px;border-radius:999px;
+  background:#e72d5b;color:#fff;
+  font:700 11px/1 "DM Sans",sans-serif;
+  letter-spacing:.12em;text-transform:uppercase;
+  box-shadow:0 12px 28px rgba(231,45,91,.22);
+  transition:transform .2s ease, box-shadow .2s ease;
+}
+#enterSpace:hover{transform:translateY(-2px);box-shadow:0 16px 34px rgba(231,45,91,.28)}
+
+.music-player{
+  position:fixed;right:22px;bottom:22px;z-index:900;
+  display:flex;align-items:center;gap:12px;
+  min-width:260px;padding:10px 13px 10px 10px;
+  border:1px solid rgba(231,45,91,.18);
+  border-radius:999px;background:rgba(255,255,255,.9);
+  box-shadow:0 14px 36px rgba(90,12,34,.15);
+  backdrop-filter:blur(14px);
+  transform:translateY(20px);opacity:0;pointer-events:none;
+  transition:.45s ease;
+}
+.music-player.visible{transform:translateY(0);opacity:1;pointer-events:auto}
+#musicToggle{
+  width:38px;height:38px;border:0;border-radius:50%;cursor:pointer;
+  background:#e72d5b;color:#fff;font-size:13px;font-weight:700;
+}
+.music-info{display:flex;flex-direction:column;gap:2px;min-width:112px}
+.music-info span{font-size:8px;letter-spacing:.14em;text-transform:uppercase;color:#a56a7c}
+.music-info strong{font-size:11px;letter-spacing:.04em;color:#6f1834}
+#volumeControl{width:58px;accent-color:#e72d5b}
+@media(max-width:600px){
+  .music-player{left:14px;right:14px;bottom:14px;min-width:0;justify-content:space-between}
+  .music-info{flex:1}
+  #volumeControl{width:70px}
+}
+
 </style>
 </head>
 <body>
+
+<div class="music-intro" id="musicIntro">
+  <div class="intro-card">
+    <div class="intro-bow">୨୧</div>
+    <div class="intro-mini">JENNIE · FALLEN ANGEL</div>
+    <h1>enter<br><em>jennie space.</em></h1>
+    <p>press enter to begin the archive ♡</p>
+    <button id="enterSpace" type="button">enter ♡</button>
+  </div>
+</div>
+<audio id="fallenAudio" preload="auto" loop>
+  <source src="JENNIE - FALLEN ANGEL.mp3" type="audio/mpeg">
+</audio>
+<div class="music-player" id="musicPlayer" aria-label="Music player">
+  <button id="musicToggle" type="button" aria-label="Pause music">Ⅱ</button>
+  <div class="music-info">
+    <span>now playing</span>
+    <strong>FALLEN ANGEL</strong>
+  </div>
+  <input id="volumeControl" type="range" min="0" max="1" step="0.01" value="0.35" aria-label="Volume">
+</div>
+
 <nav>
 <a class="brand" href="#home">JENNIE ♡</a>
 <div class="links"><a href="#news">news</a><a href="#profile">profile</a><a href="#music">music</a><a href="#fallen">fallen angel</a><a href="#timeline">timeline</a><a href="#more">more</a></div>
@@ -136,5 +230,64 @@ footer{margin-top:35px;padding:80px 20px 35px;background:var(--red);color:#fff;t
 <p>an unofficial fan-made artist archive ♡</p>
 <div class="line"></div><div class="copy">JENNIE ARCHIVE · FAN PROJECT · UPDATED FOR 2026</div>
 </footer>
+
+<script>
+(function(){
+  const audio = document.getElementById('fallenAudio');
+  const intro = document.getElementById('musicIntro');
+  const enter = document.getElementById('enterSpace');
+  const player = document.getElementById('musicPlayer');
+  const toggle = document.getElementById('musicToggle');
+  const volume = document.getElementById('volumeControl');
+
+  audio.volume = 0.35;
+
+  function showPlayer(){
+    player.classList.add('visible');
+  }
+
+  enter.addEventListener('click', async function(){
+    try {
+      await audio.play();
+      toggle.textContent = 'Ⅱ';
+      toggle.setAttribute('aria-label','Pause music');
+    } catch(e) {
+      toggle.textContent = '▶';
+      toggle.setAttribute('aria-label','Play music');
+    }
+    intro.classList.add('hidden');
+    showPlayer();
+  });
+
+  toggle.addEventListener('click', async function(){
+    if(audio.paused){
+      try {
+        await audio.play();
+        toggle.textContent = 'Ⅱ';
+        toggle.setAttribute('aria-label','Pause music');
+      } catch(e){}
+    }else{
+      audio.pause();
+      toggle.textContent = '▶';
+      toggle.setAttribute('aria-label','Play music');
+    }
+  });
+
+  volume.addEventListener('input', function(){
+    audio.volume = Number(this.value);
+  });
+
+  audio.addEventListener('play', function(){
+    toggle.textContent = 'Ⅱ';
+    toggle.setAttribute('aria-label','Pause music');
+  });
+
+  audio.addEventListener('pause', function(){
+    toggle.textContent = '▶';
+    toggle.setAttribute('aria-label','Play music');
+  });
+})();
+</script>
+
 </body>
 </html>
