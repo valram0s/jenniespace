@@ -93,6 +93,20 @@ footer{margin-top:35px;padding:80px 20px 35px;background:var(--red);color:#fff;t
   #volumeControl{width:70px}
 }
 
+
+.music-intro button#enterSpace{
+  position:relative;
+  z-index:10001;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-width:120px;
+  min-height:46px;
+  cursor:pointer;
+  user-select:none;
+  -webkit-tap-highlight-color:transparent;
+}
+
 </style>
 </head>
 <body>
@@ -101,7 +115,7 @@ footer{margin-top:35px;padding:80px 20px 35px;background:var(--red);color:#fff;t
   <div class="intro-card">
     <div class="intro-bow">୨୧</div>
     <div class="intro-mini">JENNIE · FALLEN ANGEL</div>
-    <h1><em>jennie space.</em></h1>
+    <h1>enter<br><em>jennie space.</em></h1>
     <p>press enter to begin the archive ♡</p>
     <button id="enterSpace" type="button">enter ♡</button>
   </div>
@@ -232,59 +246,64 @@ footer{margin-top:35px;padding:80px 20px 35px;background:var(--red);color:#fff;t
 </footer>
 
 <script>
-(function(){
-  const audio = document.getElementById('fallenAudio');
-  const intro = document.getElementById('musicIntro');
-  const enter = document.getElementById('enterSpace');
-  const player = document.getElementById('musicPlayer');
-  const toggle = document.getElementById('musicToggle');
-  const volume = document.getElementById('volumeControl');
+(function () {
+  const audio = document.getElementById("fallenAudio");
+  const intro = document.getElementById("musicIntro");
+  const enter = document.getElementById("enterSpace");
+  const player = document.getElementById("musicPlayer");
+  const toggle = document.getElementById("musicToggle");
+  const volume = document.getElementById("volumeControl");
 
-  audio.volume = 0.35;
+  function openSpace() {
+    // Remove the entrance screen first, so the site opens even if
+    // the browser refuses audio playback.
+    intro.style.opacity = "0";
+    intro.style.visibility = "hidden";
+    intro.style.pointerEvents = "none";
+    player.classList.add("visible");
 
-  function showPlayer(){
-    player.classList.add('visible');
+    audio.volume = Number(volume.value || 0.35);
+
+    const promise = audio.play();
+    if (promise && typeof promise.catch === "function") {
+      promise.then(function () {
+        toggle.textContent = "Ⅱ";
+        toggle.setAttribute("aria-label", "Pause music");
+      }).catch(function () {
+        toggle.textContent = "▶";
+        toggle.setAttribute("aria-label", "Play music");
+      });
+    }
   }
 
-  enter.addEventListener('click', async function(){
-    try {
-      await audio.play();
-      toggle.textContent = 'Ⅱ';
-      toggle.setAttribute('aria-label','Pause music');
-    } catch(e) {
-      toggle.textContent = '▶';
-      toggle.setAttribute('aria-label','Play music');
-    }
-    intro.classList.add('hidden');
-    showPlayer();
+  // Use both click and pointerup for better compatibility with
+  // local HTML files and mobile browsers.
+  enter.addEventListener("click", openSpace);
+  enter.addEventListener("pointerup", function (event) {
+    if (event.pointerType === "touch") openSpace();
   });
 
-  toggle.addEventListener('click', async function(){
-    if(audio.paused){
-      try {
-        await audio.play();
-        toggle.textContent = 'Ⅱ';
-        toggle.setAttribute('aria-label','Pause music');
-      } catch(e){}
-    }else{
+  toggle.addEventListener("click", function () {
+    if (audio.paused) {
+      audio.play().then(function () {
+        toggle.textContent = "Ⅱ";
+      }).catch(function () {});
+    } else {
       audio.pause();
-      toggle.textContent = '▶';
-      toggle.setAttribute('aria-label','Play music');
+      toggle.textContent = "▶";
     }
   });
 
-  volume.addEventListener('input', function(){
+  volume.addEventListener("input", function () {
     audio.volume = Number(this.value);
   });
 
-  audio.addEventListener('play', function(){
-    toggle.textContent = 'Ⅱ';
-    toggle.setAttribute('aria-label','Pause music');
+  audio.addEventListener("play", function () {
+    toggle.textContent = "Ⅱ";
   });
 
-  audio.addEventListener('pause', function(){
-    toggle.textContent = '▶';
-    toggle.setAttribute('aria-label','Play music');
+  audio.addEventListener("pause", function () {
+    toggle.textContent = "▶";
   });
 })();
 </script>
